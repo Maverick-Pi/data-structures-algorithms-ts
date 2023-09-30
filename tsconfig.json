@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "target": "ES6",
+    "module": "CommonJS",
+    "strict": true,
+    "baseUrl": "./",
+    "paths": {"@/*": ["src/*"]}
+  },
+  "include": [
+    "src/**/*.ts",
+    ".eslintrc.js",
+    "__test__/**/*.test.ts",
+    "jest.config.ts",
+  ]
+}
