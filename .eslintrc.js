@@ -39,6 +39,7 @@ module.exports = {
         endOfLine: 'auto' // 换行符号不限制（win mac 不一致）
       }
     ],
-    'import/no-duplicates': 'off'
+    'import/no-duplicates': 'off',
+    '@typescript-eslint/no-non-null-assertion': 'off'
   }
 }
