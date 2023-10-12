@@ -23,10 +23,10 @@ class ListNode<E> {
  * 单向环形链表队列
  */
 export class LinkedListQueue<E> implements Queue<E>, Iterable<E> {
-  readonly head: ListNode<E> = new ListNode<E>(null, null)
+  private readonly head: ListNode<E> = new ListNode<E>(null, null)
   private tail = this.head
   private size: number = 0 // 结点数
-  readonly capacity: number // 队列容量
+  private readonly capacity: number // 队列容量
 
   constructor(capacity = Number.MAX_SAFE_INTEGER) {
     this.tail.next = this.head
