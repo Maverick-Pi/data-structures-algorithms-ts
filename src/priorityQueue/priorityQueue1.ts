@@ -9,7 +9,7 @@
 import { type Queue } from '@/queue/queue'
 
 export class PriorityQueue1<E extends Priority> implements Queue<E> {
-  private array: E[]
+  private array: E[] | null[]
   private size: number // 元素个数
 
   constructor(capacity: number) {
@@ -75,7 +75,7 @@ export class PriorityQueue1<E extends Priority> implements Queue<E> {
   private selectMax(): number {
     let max: number = 0
     for (let i = 0; i < this.size; i++) {
-      if (this.array[i].priority() > this.array[max].priority()) {
+      if (this.array[i]!.priority() > this.array[max]!.priority()) {
         max = i
       }
     }
@@ -90,6 +90,7 @@ export class PriorityQueue1<E extends Priority> implements Queue<E> {
     for (let i = max; i < this.size - 1; i++) {
       this.array[i] = this.array[i + 1]
     }
-    this.size--
+    // help GC
+    this.array[--this.size] = null
   }
 }
